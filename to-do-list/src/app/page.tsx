@@ -7,7 +7,8 @@ export default function Home() {
   const [options, setOptions] = useState<string[]>([])
 
   const onSubmitForm = () => {
-    setOptions([...options, searchInputValue])
+    setOptions([...options, searchInputValue]);
+    setSearchInputValue("");
   }
 
   const onRemoveItem = (indexToRemove: number) => {
