@@ -1,0 +1,21 @@
+"use client"
+import { CheckList, SearchInput } from "@/components";
+import { useState } from "react";
+
+export default function Home() {
+  const [searchInputValue, setSearchInputValue] = useState("")
+  const [options, setOptions] = useState(["Teste", "Faz"])
+  
+  return (
+    <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-40 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <div className="flex flex-col gap-8 mx-auto">
+
+        <h1 className="text-6xl uppercase ">To Do List</h1>
+        <SearchInput value={searchInputValue} setValue={setSearchInputValue} />
+      </div>
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start pl-30 w-full">
+        <CheckList options={options} />
+      </main>
+    </div>
+  );
+}
