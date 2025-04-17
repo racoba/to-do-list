@@ -22,7 +22,7 @@ export const CheckList = ({ options, onRemoveItem, onResetOptions }: IProps) => 
                     />
                 )
             })}
-            {options && (
+            {options.length > 0 && (
                 <button
                     onClick={onResetOptions}
                     className="bg-red-400 px-4 py-2 rounded text-white cursor-pointer"
