@@ -19,7 +19,7 @@ export const SearchInput = ({ value, setValue, onSubmit }: IProps) => {
             value={value}
             onChange={(e) => setValue(e.target.value)}
             onKeyDown={handleKeyDown}
-            className="bg-white border border-blue-300 rounded px-3 py-2 w-100 text-black"
+            className="bg-white border border-blue-300 rounded px-3 py-2 w-full md:w-100 text-black"
             placeholder="Type your todo item..."
         />
     )
