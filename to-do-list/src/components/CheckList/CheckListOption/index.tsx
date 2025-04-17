@@ -10,7 +10,7 @@ interface IProps {
 export const CheckListOption = ({ label, onRemove }: IProps) => {
     const uniqueId = useId();
     const [isChecked, setIsChecked] = useState(false);
-    
+
     return (
         <div className="flex flex-row gap-2">
             <input
@@ -24,9 +24,15 @@ export const CheckListOption = ({ label, onRemove }: IProps) => {
             />
             <label
                 htmlFor={uniqueId}
-                className={`${isChecked ? "line-through text-gray-600" : "text-white"} cursor-pointer`}
+                className={`relative cursor-pointer transition-colors duration-300 ${isChecked ? "text-gray-500" : "text-white"
+                    }`}
             >
                 {label}
+                <span
+                    className={`absolute left-0 top-[45%] h-[1.5px] w-full bg-gray-500 transform transition-transform duration-500 origin-left ${isChecked ? "scale-x-100" : "scale-x-0"
+                        }`}
+                    style={{ transform: "translateY(-50%)" }}
+                />
             </label>
             <button
                 onClick={onRemove}
