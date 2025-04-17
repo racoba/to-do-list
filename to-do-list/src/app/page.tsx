@@ -6,9 +6,13 @@ export default function Home() {
   const [searchInputValue, setSearchInputValue] = useState("")
   const [options, setOptions] = useState(["Teste", "Faz"])
 
-  const onSubmitForm = () => [
+  const onSubmitForm = () => {
     setOptions([...options, searchInputValue])
-  ]
+  }
+
+  const onRemoveItem = (indexToRemove: number) => {
+    setOptions(options.filter((_, index) => index !== indexToRemove));
+  };
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-40 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -22,7 +26,7 @@ export default function Home() {
         />
       </div>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start pl-30 w-full">
-        <CheckList options={options} />
+        <CheckList options={options} onRemoveItem={onRemoveItem}/>
       </main>
     </div>
   );
