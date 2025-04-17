@@ -3,8 +3,8 @@ import { CheckList, SearchInput } from "@/components";
 import { useState } from "react";
 
 export default function Home() {
-  const [searchInputValue, setSearchInputValue] = useState("")
-  const [options, setOptions] = useState(["Teste", "Faz"])
+  const [searchInputValue, setSearchInputValue] = useState<string>("")
+  const [options, setOptions] = useState<string[]>([])
 
   const onSubmitForm = () => {
     setOptions([...options, searchInputValue])
