@@ -37,7 +37,11 @@ export default function Home() {
         />
       </div>
       <div className="flex flex-col gap-[32px] row-start-2 px-6 sm:items-start w-full md:w-[60%] mx-auto">
-        <CheckList options={options} onRemoveItem={onRemoveItem} />
+        <CheckList
+          options={options}
+          onRemoveItem={onRemoveItem}
+          onResetOptions={()=>setOptions([])}
+        />
       </div>
     </div>
   );

@@ -3,10 +3,11 @@ import { CheckListOption } from "./CheckListOption"
 interface IProps {
     options: string[]
     onRemoveItem: (index: number) => void;
+    onResetOptions: () => void;
 }
 
 
-export const CheckList = ({ options, onRemoveItem }: IProps) => {
+export const CheckList = ({ options, onRemoveItem, onResetOptions }: IProps) => {
     const onDeleteOption = (index: number) => {
         onRemoveItem(index);
     }
@@ -21,6 +22,14 @@ export const CheckList = ({ options, onRemoveItem }: IProps) => {
                     />
                 )
             })}
+            {options && (
+                <button
+                    onClick={onResetOptions}
+                    className="bg-red-400 px-4 py-2 rounded text-white cursor-pointer"
+                >
+                    Clear All
+                </button>
+            )}
         </div>
     )
 }
