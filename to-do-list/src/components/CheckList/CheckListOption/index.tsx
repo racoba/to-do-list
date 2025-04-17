@@ -19,6 +19,7 @@ export const CheckListOption = ({ label }: IProps) => {
                 aria-label={label}
                 checked={isChecked}
                 onClick={() => setIsChecked(!isChecked)}
+                onChange={()=>console.log("changed")}
             />
             <label
                 htmlFor={uniqueId}
